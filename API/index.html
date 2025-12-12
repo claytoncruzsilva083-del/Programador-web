@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Gerador de Doguinhos  </title> 
+     <style>
+        /* Estilos Gerais */
+        body {
+            font-family: 'Segue UI', Tahoma,Geneva,verdana,sans-serif;
+            background-color: #e0e7ff; /* fondo azul suave*/
+            margin: 0;
+            height: 100vh;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+        /* O Cartâo */
+        .card {
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px;
+            text-align: center;
+            max-width: 350px;
+            width:90%;
+            transition: transform 0.3s esse;
+        }
+     </style>
+     
+      
+<body>
+    <img id="foto" width="300">
+    <button onclick="gerar()">Gerar cachorro</button>
+
+    <script>
+        function gerar() {
+            fetch("https://dog.ceo/api/breeds/image/random")
+                .then(res => res.json())
+                .then(data => {
+                    document.getElementById("foto").src = data.message;
+                })
+        }
+    </script>
+</body>
+
+</html>
